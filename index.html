@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Level Sarathi - O Level के छात्रों का पूरा साथी</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Hind:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-blue: #1a5fce;
+            --light-blue: #e8f1ff;
+            --dark-blue: #0a3a8a;
+            --accent-yellow: #ffc107;
+            --light-yellow: #fff8e1;
+            --dark-yellow: #ff9800;
+            --text-dark: #333;
+            --text-light: #666;
+            --white: #ffffff;
+            --gray-bg: #f8f9fa;
+            --transition: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Poppins', 'Hind', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: var(--white);
+        }
+
+        .hindi-font {
+            font-family: 'Hind', sans-serif;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+        }
+
+        .logo-text span {
+            color: var(--accent-yellow);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+            font-family: 'Hind', sans-serif;
+            font-size: 1.1rem;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary-blue);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background-color: var(--accent-yellow);
+            transition: var(--transition);
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary-blue);
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--dark-blue) 100%);
+            color: var(--white);
+            padding: 150px 0 100px;
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-text {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .hero-text h1 {
+            font-size: 3.2rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            font-family: 'Hind', sans-serif;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            font-family: 'Hind', sans-serif;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-img {
+            max-width: 300px;
+            border-radius: 20px;
+            transform: perspective(1000px) rotateY(-10deg);
+            transition: var(--transition);
+        }
+
+        .hero-img:hover {
+            transform: perspective(1000px) rotateY(0deg);
+        }
+
+        .highlight-box {
+            background-color: rgba(255, 255, 255, 0.15);
+            border-left: 5px solid var(--accent-yellow);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 25px 0;
+        }
+
+        .highlight-box p {
+            margin: 0;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-yellow);
+            color: var(--text-dark);
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            font-family: 'Hind', sans-serif;
+        }
+
+        .cta-button:hover {
+            background-color: var(--dark-yellow);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-button i {
+            margin-right: 8px;
+        }
+
+        /* Features Section */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+            font-family: 'Hind', sans-serif;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-yellow);
+        }
+
+        .section-title p {
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+            font-family: 'Hind', sans-serif;
+            font-size: 1.1rem;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background-color: var(--white);
+            border-radius: 15px;
+            padding: 35px 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            border-top: 5px solid var(--primary-blue);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background-color: var(--light-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: var(--primary-blue);
+            font-size: 2rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-blue);
+            font-family: 'Hind', sans-serif;
+        }
+
+        .feature-card p {
+            font-family: 'Hind', sans-serif;
+            font-size: 1.05rem;
+        }
+
+        /* Syllabus Section */
+        .syllabus-section {
+            background-color: var(--gray-bg);
+        }
+
+        .syllabus-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .subject-card {
+            background-color: var(--white);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            transition: var(--transition);
+            border-left: 5px solid var(--accent-yellow);
+        }
+
+        .subject-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .subject-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            font-family: 'Hind', sans-serif;
+            font-size: 1.4rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .subject-card h3 i {
+            margin-right: 10px;
+            color: var(--accent-yellow);
+        }
+
+        .subject-topics {
+            list-style: none;
+        }
+
+        .subject-topics li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+            font-family: 'Hind', sans-serif;
+        }
+
+        .subject-topics li:before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--primary-blue);
+            position: absolute;
+            left: 0;
+            font-size: 0.9rem;
+        }
+
+        /* App Highlights Section */
+        .highlights-section {
+            background-color: var(--light-blue);
+        }
+
+        .highlight-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            background-color: var(--white);
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .highlight-icon {
+            width: 70px;
+            height: 70px;
+            background-color: var(--accent-yellow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.8rem;
+            margin-right: 25px;
+            flex-shrink: 0;
+        }
+
+        .highlight-text h3 {
+            color: var(--primary-blue);
+            margin-bottom: 10px;
+            font-family: 'Hind', sans-serif;
+            font-size: 1.4rem;
+        }
+
+        .highlight-text p {
+            font-family: 'Hind', sans-serif;
+            font-size: 1.05rem;
+            color: var(--text-light);
+        }
+
+        /* Screenshots Section */
+        .screenshots {
+            background-color: var(--white);
+        }
+
+        .screenshot-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+        }
+
+        .screenshot-item {
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+        }
+
+        .screenshot-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .screenshot-img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Versions Section */
+        .versions-section {
+            background-color: var(--gray-bg);
+        }
+
+        .versions-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .version-card {
+            background-color: var(--white);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            flex: 1;
+            min-width: 250px;
+            max-width: 350px;
+            text-align: center;
+            transition: var(--transition);
+            border-bottom: 5px solid var(--accent-yellow);
+        }
+
+        .version-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .version-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            font-family: 'Hind', sans-serif;
+            font-size: 1.5rem;
+        }
+
+        .version-date {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            font-family: 'Hind', sans-serif;
+        }
+
+        .version-features {
+            list-style: none;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .version-features li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+            font-family: 'Hind', sans-serif;
+        }
+
+        .version-features li:before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--accent-yellow);
+            position: absolute;
+            left: 0;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background-color: var(--primary-blue);
+            color: var(--white);
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            font-family: 'Hind', sans-serif;
+        }
+
+        .download-btn:hover {
+            background-color: var(--dark-blue);
+        }
+
+        /* Developer Section */
+        .developer-section {
+            background-color: var(--white);
+        }
+
+        .developer-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+        }
+
+        .developer-img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid var(--light-blue);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .developer-info {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .developer-info h3 {
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            font-family: 'Hind', sans-serif;
+        }
+
+        .developer-info p {
+            font-family: 'Hind', sans-serif;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: var(--primary-blue);
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .social-link:hover {
+            background-color: var(--dark-blue);
+            transform: translateY(-5px);
+        }
+
+        /* App Info Section */
+        .app-info-section {
+            background-color: var(--light-blue);
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .info-card {
+            background-color: var(--white);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+        }
+
+        .info-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            font-family: 'Hind', sans-serif;
+            font-size: 1.4rem;
+        }
+
+        .info-card p {
+            font-family: 'Hind', sans-serif;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--dark-blue);
+            color: var(--white);
+            padding: 70px 0 30px;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 50px;
+        }
+
+        .footer-column {
+            flex: 1;
+            min-width: 250px;
+            margin-bottom: 30px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            color: var(--accent-yellow);
+            position: relative;
+            padding-bottom: 10px;
+            font-family: 'Hind', sans-serif;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-yellow);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: var(--transition);
+            font-family: 'Hind', sans-serif;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-yellow);
+            padding-left: 5px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+            font-family: 'Hind', sans-serif;
+        }
+
+        .hindi-badge {
+            display: inline-block;
+            background-color: var(--accent-yellow);
+            color: var(--text-dark);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-left: 10px;
+            font-weight: 600;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero-text {
+                margin-bottom: 50px;
+            }
+
+            .developer-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .highlight-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .highlight-icon {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            nav ul {
+                position: fixed;
+                top: 80px;
+                right: -100%;
+                width: 80%;
+                height: calc(100vh - 80px);
+                background-color: var(--white);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 50px;
+                transition: var(--transition);
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            }
+
+            nav ul.active {
+                right: 0;
+            }
+
+            nav ul li {
+                margin: 0 0 30px 0;
+            }
+
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+
+            .section {
+                padding: 70px 0;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .cta-button {
+                padding: 12px 25px;
+                font-size: 1rem;
+            }
+            
+            .logo-img {
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">
+                <img src="https://github.com/div137/application-olevel/blob/main/logo.png?raw=true" alt="O Level Sarathi Logo" class="logo-img">
+                <div class="logo-text">O Level <span>Sarathi</span></div>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul id="mainNav">
+                    <li><a href="#home">होम</a></li>
+                    <li><a href="#features">विशेषताएं</a></li>
+                    <li><a href="#syllabus">सिलेबस</a></li>
+                    <li><a href="#highlights">महत्वपूर्ण बातें</a></li>
+                    <li><a href="#versions">पुराने वर्जन</a></li>
+                    <li><a href="#developer">डेवलपर</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1 class="hindi-font">O Level की तैयारी का सबसे बेहतरीन साथी</h1>
+                <p class="hindi-font">एक क्लिक में डाउनलोड करें और पाएं सिलेबस-आधारित सामग्री, पिछले वर्षों के पेपर, 200+ PDFs, वीडियो लेसन, 400+ टॉपिक-वार टेस्ट और प्रोजेक्ट सबमिशन!</p>
+                
+                <div class="highlight-box">
+                    <p class="hindi-font"><i class="fas fa-shield-alt"></i> 100% सुरक्षित ऐप | <i class="fas fa-wifi-slash"></i> ऑफलाइन काम करता है | <i class="fas fa-bell"></i> समय पर नोटिफिकेशन</p>
+                </div>
+                
+                <a href="https://github.com/div137/application-olevel/raw/main/o%20levelsarathi%20version%201.00.apk" class="cta-button">
+                    <i class="fas fa-download"></i> अभी डाउनलोड करें
+                </a>
+                <span class="hindi-badge">मुफ्त में उपलब्ध</span>
+            </div>
+            <div class="hero-image">
+                <img src="https://github.com/div137/application-olevel/blob/main/Ddd.png?raw=true" alt="O Level Sarathi App" class="hero-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section" id="features">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="hindi-font">ऐप की खास विशेषताएं</h2>
+                <p class="hindi-font">O Level के छात्रों के लिए विशेष रूप से डिज़ाइन किया गया यह ऐप आपकी पढ़ाई को बनाएगा आसान और प्रभावी</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <h3 class="hindi-font">सिलेबस-आधारित सामग्री</h3>
+                    <p class="hindi-font">O Level के पूरे सिलेबस को कवर करती सरल और आसान भाषा में सामग्री। कठिन टॉपिक्स को समझने में मिलेगी मदद।</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </div>
+                    <h3 class="hindi-font">200+ PDF संसाधन</h3>
+                    <p class="hindi-font">सभी विषयों और टॉपिक्स को कवर करने वाली व्यापक PDFs का संग्रह। डाउनलोड करके ऑफलाइन भी पढ़ सकते हैं।</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3 class="hindi-font">वीडियो लेसन</h3>
+                    <p class="hindi-font">कठिन टॉपिक्स को समझने के लिए एनिमेटेड वीडियो लेसन। विजुअल लर्निंग से बढ़ेगी समझ और याद रखने की क्षमता।</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <h3 class="hindi-font">400+ टॉपिक-वार टेस्ट</h3>
+                    <p class="hindi-font">हर टॉपिक के बाद प्रैक्टिस टेस्ट से खुद को आंकें। अपनी प्रगति को ट्रैक करें और कमजोर क्षेत्रों पर ध्यान दें।</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-history"></i>
+                    </div>
+                    <h3 class="hindi-font">पिछले वर्षों के पेपर</h3>
+                    <p class="hindi-font">पिछले 10 वर्षों के प्रश्न पत्र उत्तरों के साथ। परीक्षा पैटर्न को समझें और बेहतर तैयारी करें।</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-project-diagram"></i>
+                    </div>
+                    <h3 class="hindi-font">प्रोजेक्ट सबमिशन</h3>
+                    <p class="hindi-font">ऐप के जरिए ही प्रोजेक्ट डाउनलोड करें और सबमिट करें। सीधे शिक्षकों तक पहुंचाएं अपना प्रोजेक्ट वर्क।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Syllabus Section -->
+    <section class="section syllabus-section" id="syllabus">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="hindi-font">O Level पूरा सिलेबस कवर</h2>
+                <p class="hindi-font">हमारा ऐप NIELIT O Level के पूरे सिलेबस को कवर करता है जिसमें ये विषय शामिल हैं:</p>
+            </div>
+            
+            <div class="syllabus-container">
+                <div class="subject-card">
+                    <h3 class="hindi-font"><i class="fas fa-laptop-code"></i> M1-R5: IT Tools & Business Systems</h3>
+                    <ul class="subject-topics hindi-font">
+                        <li>कंप्यूटर फंडामेंटल्स</li>
+                        <li>ऑपरेटिंग सिस्टम</li>
+                        <li>वर्ड प्रोसेसिंग</li>
+                        <li>स्प्रेडशीट</li>
+                        <li>प्रेजेंटेशन सॉफ्टवेयर</li>
+                        <li>इंटरनेट और ई-मेल</li>
+                    </ul>
+                </div>
+                
+                <div class="subject-card">
+                    <h3 class="hindi-font"><i class="fas fa-code"></i> M2-R5: Web Design & Publishing</h3>
+                    <ul class="subject-topics hindi-font">
+                        <li>HTML5 और CSS3</li>
+                        <li>जावास्क्रिप्ट बेसिक्स</li>
+                        <li>वेब डिजाइनिंग टूल्स</li>
+                        <li>फोटोशॉप और ग्राफिक्स</li>
+                        <li>वेब होस्टिंग और डोमेन</li>
+                        <li>वेबसाइट पब्लिशिंग</li>
+                    </ul>
+                </div>
+                
+                <div class="subject-card">
+                    <h3 class="hindi-font"><i class="fas fa-database"></i> M3-R5: Programming & Problem Solving</h3>
+                    <ul class="subject-topics hindi-font">
+                        <li>प्रोग्रामिंग फंडामेंटल्स</li>
+                        <li>अल्गोरिदम और फ्लोचार्ट</li>
+                        <li>C प्रोग्रामिंग लैंग्वेज</li>
+                        <li>डेटा स्ट्रक्चर्स</li>
+                        <li>प्रॉब्लम सॉल्विंग टेक्निक्स</li>
+                        <li>प्रोग्राम टेस्टिंग और डीबगिंग</li>
+                    </ul>
+                </div>
+                
+                <div class="subject-card">
+                    <h3 class="hindi-font"><i class="fas fa-network-wired"></i> M4-R5: Internet of Things</h3>
+                    <ul class="subject-topics hindi-font">
+                        <li>IoT इंट्रोडक्शन और आर्किटेक्चर</li>
+                        <li>सेंसर्स और एक्चुएटर्स</li>
+                        <li>आरडुइनो और रास्पबेरी पाई</li>
+                        <li>IoT प्रोटोकॉल्स</li>
+                        <li>IoT एप्लिकेशन्स</li>
+                        <li>सिक्योरिटी और प्राइवेसी</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Highlights Section -->
+    <section class="section highlights-section" id="highlights">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="hindi-font">ऐप के बारे में महत्वपूर्ण बातें</h2>
+                <p class="hindi-font">O Level Sarathi ऐप सिर्फ एक स्टडी ऐप नहीं, बल्कि आपका पूरा साथी है</p>
+            </div>
+            
+            <div class="highlight-item">
+                <div class="highlight-icon">
+                    <i class="fas fa-wifi-slash"></i>
+                </div>
+                <div class="highlight-text">
+                    <h3 class="hindi-font">पूरी तरह ऑफलाइन काम करता है</h3>
+                    <p class="hindi-font">एक बार डाउनलोड करने के बाद इंटरनेट के बिना भी पढ़ सकते हैं। सभी स्टडी मटेरियल, PDFs और टेस्ट ऑफलाइन एक्सेस कर सकते हैं।</p>
+                </div>
+            </div>
+            
+            <div class="highlight-item">
+                <div class="highlight-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <div class="highlight-text">
+                    <h3 class="hindi-font">100% सुरक्षित और विश्वसनीय</h3>
+                    <p class="hindi-font">कोई विज्ञापन नहीं, कोई व्यक्तिगत डेटा नहीं लिया जाता। पूरी तरह से सुरक्षित ऐप जिसे हजारों छात्र इस्तेमाल कर रहे हैं।</p>
+                </div>
+            </div>
+            
+            <div class="highlight-item">
+                <div class="highlight-icon">
+                    <i class="fas fa-bell"></i>
+                </div>
+                <div class="highlight-text">
+                    <h3 class="hindi-font">समय पर नोटिफिकेशन और रिमाइंडर</h3>
+                    <p class="hindi-font">रोजाना स्टडी रिमाइंडर, क्लास टेस्ट की नोटिफिकेशन, परीक्षा तिथियों की जानकारी और नए कंटेंट के अपडेट्स।</p>
+                </div>
+            </div>
+            
+            <div class="highlight-item">
+                <div class="highlight-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="highlight-text">
+                    <h3 class="hindi-font">प्रगति रिपोर्ट और विश्लेषण</h3>
+                    <p class="hindi-font">हर टेस्ट के बाद विस्तृत रिपोर्ट, कमजोर टॉपिक्स की पहचान, सुधार के सुझाव और प्रदर्शन ग्राफ।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots Section -->
+    <section class="section screenshots">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="hindi-font">ऐप के स्क्रीनशॉट</h2>
+                <p class="hindi-font">ऐप के यूजर-फ्रेंडली इंटरफेस की एक झलक देखें</p>
+            </div>
+            
+            <div class="screenshot-container">
+                <div class="screenshot-item">
+                    <img src="https://github.com/div137/application-olevel/blob/main/lar.png?raw=true" alt="App Screen 1" class="screenshot-img">
+                </div>
+                <div class="screenshot-item">
+                    <img src="https://github.com/div137/application-olevel/blob/main/main.png?raw=true" alt="App Screen 2" class="screenshot-img">
+                </div>
+                <div class="screenshot-item">
+                    <img src="https://github.com/div137/application-olevel/blob/main/lst.png?raw=true" alt="App Screen 3" class="screenshot-img">
+                </div>
+                <div class="screenshot-item">
+                    <img src="https://github.com/div137/application-olevel/blob/main/splash.png?raw=true" alt="App Splash Screen" class="screenshot-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App Info Section -->
+    <section class="section app-info-section">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="hindi-font">ऐप के बारे में और जानें</h2>
+                <p class="hindi-font">O Level Sarathi ऐप को विशेष रूप से भारतीय छात्रों के लिए डिज़ाइन किया गया है</p>
+            </div>
+            
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3 class="hindi-font"><i class="fas fa-users"></i> किसके लिए है?</h3>
+                    <p class="hindi-font">NIELIT O Level के सभी छात्रों के लिए, चाहे वे नए हों या रिवीजन कर रहे हों।</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3 class="hindi-font"><i class="fas fa-rupee-sign"></i> कीमत</h3>
+                    <p class="hindi-font">पूरी तरह मुफ्त ऐप, कोई छिपी हुई कीमत नहीं, कोई इन-ऐप खरीदारी नहीं।</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3 class="hindi-font"><i class="fas fa-mobile-alt"></i> कंपैटिबिलिटी</h3>
+                    <p class="hindi-font">Android 5.0+ के सभी डिवाइस पर काम करता है। स्मार्टफोन और टैबलेट दोनों में।</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3 class="hindi-font"><i class="fas fa-sync-alt"></i> अपडेट्स</h3>
+                    <p class="hindi-font">नए कंटेंट और सिलेबस के अनुसार नियमित अपडेट्स मिलते रहते हैं।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Versions Section -->
+    <section class="section versions-section" id="versions">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="hindi-font">पुराने वर्जन डाउनलोड करें</h2>
+                <p class="hindi-font">अपने डिवाइस की कंपैटिबिलिटी के अनुसार पुराने वर्जन डाउनलोड करें</p>
+            </div>
+            
+            <div class="versions-container">
+                <div class="version-card">
+                    <h3 class="hindi-font">वर्जन 2.1.0</h3>
+                    <div class="version-date hindi-font">रिलीज तिथि: मई 2024</div>
+                    <ul class="version-features hindi-font">
+                        <li>50 नए टॉपिक-वार टेस्ट जोड़े</li>
+                        <li>वीडियो स्ट्रीमिंग में सुधार</li>
+                        <li>बग फिक्सेज और परफॉर्मेंस सुधार</li>
+                        <li>प्रोजेक्ट सबमिशन फीचर एन्हांस</li>
+                    </ul>
+                    <a href="#" class="download-btn hindi-font">डाउनलोड v2.1.0</a>
+                </div>
+                
+                <div class="version-card">
+                    <h3 class="hindi-font">वर्जन 2.0.5</h3>
+                    <div class="version-date hindi-font">रिलीज तिथि: मार्च 2024</div>
+                    <ul class="version-features hindi-font">
+                        <li>30 नए PDF रिसोर्सेज जोड़े</li>
+                        <li>प्रश्न बैंक अपडेट किया</li>
+                        <li>यूजर इंटरफेस में सुधार</li>
+                        <li>ऑफलाइन मोड एन्हांसमेंट</li>
+                    </ul>
+                    <a href="#" class="download-btn hindi-font">डाउनलोड v2.0.5</a>
+                </div>
+                
+                <div class="version-card">
+                    <h3 class="hindi-font">वर्जन 1.9.2</h3>
+                    <div class="version-date hindi-font">रिलीज तिथि: जनवरी 2024</div>
+                    <ul class="version-features hindi-font">
+                        <li>पिछले वर्ष के पेपर (2023) जोड़े</li>
+                        <li>डाउनलोड इश्यूज फिक्स किए</li>
+                        <li>सर्च फंक्शनलिटी में सुधार</li>
+                        <li>पुराने डिवाइस के लिए कंपैटिबिलिटी</li>
+                    </ul>
+                    <a href="#" class="download-btn hindi-font">डाउनलोड v1.9.2</a>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="#" class="cta-button">
+                    <i class="fas fa-list"></i> सभी वर्जन देखें
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Developer Section -->
+    <section class="section developer-section" id="developer">
+        <div class="container">
+            <div class="section-title">
+                <h2 class="hindi-font">डेवलपर के बारे में</h2>
+                <p class="hindi-font">O Level Sarathi ऐप के रचयिता से मिलिए</p>
+            </div>
+            
+            <div class="developer-container">
+                <div>
+                    <img src="https://raw.githubusercontent.com/div137/img.github.io/refs/heads/main/teem/div.jpg" alt="Developer" class="developer-img">
+                </div>
+                <div class="developer-info">
+                    <h3 class="hindi-font">ER. Divyanshu Yadav</h3>
+                    <p class="hindi-font">शिक्षा प्रौद्योगिकी में वर्षों के अनुभव के साथ एक उत्साही डेवलपर और शिक्षक। ER. Divyanshu ने O Level Sarathi ऐप को जटिल सिलेबस सामग्री और छात्रों की समझ के बीच की खाई को पाटने के लिए बनाया है।</p>
+                    <p class="hindi-font">यह ऐप O Level पाठ्यक्रम की चुनौतियों की गहरी समझ को दर्शाता है और एक यूजर-फ्रेंडली फॉर्मेट में व्यापक संसाधन प्रदान करता है। छात्रों की फीडबैक और बदलते परीक्षा पैटर्न के आधार पर नियमित अपडेट और सुधार किए जाते हैं।</p>
+                    
+                    <p class="hindi-font"><strong>ईमेल:</strong> er.divsir@gmail.com</p>
+                    
+                    <div class="social-links">
+                        <a href="#" class="social-link" title="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="#" class="social-link" title="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link" title="Telegram">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="#" class="social-link" title="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="download">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3 class="hindi-font">O Level Sarathi</h3>
+                    <p class="hindi-font">O Level परीक्षा की तैयारी के लिए आपका विश्वसनीय साथी। जटिल अवधारणाओं को सरल बनाना और शैक्षणिक सफलता के लिए व्यापक संसाधन प्रदान करना।</p>
+                    <div style="margin-top: 20px;">
+                        <a href="#" class="cta-button" style="display: inline-block; background-color: var(--accent-yellow); color: var(--text-dark);">
+                            <i class="fas fa-download"></i> ऐप डाउनलोड करें
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="hindi-font">त्वरित लिंक</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">होम</a></li>
+                        <li><a href="#features">विशेषताएं</a></li>
+                        <li><a href="#syllabus">सिलेबस</a></li>
+                        <li><a href="#highlights">महत्वपूर्ण बातें</a></li>
+                        <li><a href="#versions">पुराने वर्जन</a></li>
+                        <li><a href="#developer">डेवलपर</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="hindi-font">संसाधन</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">O Level सिलेबस</a></li>
+                        <li><a href="#">अध्ययन सामग्री</a></li>
+                        <li><a href="#">पिछले वर्षों के पेपर</a></li>
+                        <li><a href="#">अभ्यास परीक्षण</a></li>
+                        <li><a href="#">वीडियो पाठ</a></li>
+                        <li><a href="#">प्रोजेक्ट गाइड</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3 class="hindi-font">संपर्क करें</h3>
+                    <ul class="footer-links">
+                        <li><a href="mailto:er.divsir@gmail.com">er.divsir@gmail.com</a></li>
+                        <li><a href="#">फीडबैक और सुझाव</a></li>
+                        <li><a href="#">समस्या रिपोर्ट करें</a></li>
+                        <li><a href="#">नई सुविधा का अनुरोध</a></li>
+                        <li><a href="#">सहायता केंद्र</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p class="hindi-font">&copy; 2024 O Level Sarathi. सर्वाधिकार सुरक्षित। | O Level छात्रों के लिए डिज़ाइन किया गया</p>
+                <p class="hindi-font" style="margin-top: 10px;">Made with ❤️ by ER. Divyanshu Yadav</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+            mobileMenuBtn.innerHTML = mainNav.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking a link
+        const navLinks = document.querySelectorAll('nav ul li a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('active');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add shadow to header on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if(window.scrollY > 50) {
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = '0 2px 15px rgba(0, 0, 0, 0.1)';
+            }
+        });
+        
+        // Add animation to feature cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        // Observe feature cards
+        document.querySelectorAll('.feature-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
